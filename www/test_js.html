@@ -1,0 +1,9 @@
+<div ng-init="items = ['hogehoge']">
+  <ul>
+    <li ng-repeat="item in items track by $index">
+      <input type="text" size="75" ng-model="item" ng-required="true" />
+      <button ng-click="items.splice($index, 1)" ng-disabled="items.length <= 1">削除</button>
+    </li>
+  </ul>
+  <button ng-click="items.push('ho')">追加</button>
+</div>

@@ -1,0 +1,162 @@
+<ng-include src="page1_1.html"></ng-include>
+<ons-navigator var="myNavigator_1_1" ng-app="app" id="my-navigator1_1" ng-controller="PageController1_1" ons-prepop="pushb_1_1.init_prepop()" ons-postpop="pushb_1_1.init_postpop()">
+   <ons-page id="page_1">
+        <ons-toolbar class="bg_color">
+            <div class="left">
+                <ons-toolbar-button ng-click="app.slidingMenu.toggleMenu()"><ons-icon class="font_white" icon="bars"></ons-icon></ons-toolbar-button>
+            </div>
+            <div class="center">
+                <img class="logo_gps" src="https://idolscheduler.sakura.ne.jp/img/logo_grafun.png" width="143" height="auto">
+            </div>
+            <div class="right">
+                <ons-toolbar-button ng-click="myNavigator_1_1.pushPage('search.html', {animation: 'lift'})"><ons-icon class="font_white" icon="search"></ons-icon></ons-toolbar-button>
+            </div>
+        </ons-toolbar>
+
+        <ons-scroller infinit-scroll-enable="canWeLoadMoreContent()" can-load="true" on-scrolled="populateList()" threshold="20" style="height:100%">
+
+            <div style="text-align: center">
+<!--
+                <div id="header_ad" class="mb10p">
+                	<img src="https://idolscheduler.sakura.ne.jp/idolscheduler/wp-content/uploads/2015/06/03_AKB48bn2015.6.111.jpg" width="320" height="40" onClick="window.open('http://www.girlpop.jp/ioj2015/', '_blank', 'location=yes');">
+    				<img src="https://idolscheduler.sakura.ne.jp/img/ad/gps_passpo_bannerC.png" width="320" height="40" onClick="window.open('http://www.girlpop.jp/report/detail/?p=19447', '_self');">
+        		</div>
+
+                <div id="header_ad" class="mb10p">
+                	<img src="https://idolscheduler.sakura.ne.jp/idolscheduler/wp-content/uploads/2015/06/03_AKB48bn2015.6.111.jpg" width="320" height="40" onClick="pusha(1)">
+        		</div>
+
+                <div id="header_dayslider" class="mt5p">
+        			<nav id="daynav">
+        				<ul id="daynav_ul" style="position: relative; top: 30%;">
+                            <ons-icon icon="spinner" size="40px" spin="true"></ons-icon>
+                        </ul>
+        			</nav>
+        		</div>
+-->
+                <ons-carousel swipeable style="margin: 3px 0 0; height: 40px;" overscrollable auto-scroll item-width="80px">
+                    <ons-carousel-item ng-repeat="item in headmenu" style="margin-left: 5px;">
+                        <button ng-show="item.text === 'おすすめ作品'" class="button button--cta f12x">{{item.text}}</button>
+                        <button ng-show="item.text !== 'おすすめ作品'" class="button button--quiet f12x">{{item.text}}</button>
+                    </ons-carousel-item>
+                </ons-carousel>
+
+            </div>
+
+            <div style="text-align: center" class="mt10p">
+                <div id="header_ad">
+                    <img src="https://idolscheduler.sakura.ne.jp/img/gf_sample_banner_top.jpg" width="100%" height="auto" onClick="window.open('http://www.girlpop.jp/ioj2015/', '_blank', 'location=yes');">
+        		</div>
+            </div>
+
+            <h2 class="main_title ml10p mb5p">おすすめマンガ作品</h2>
+            <ons-carousel id="top_reccomend" swipeable style="margin: 0 0 10px; height: 342px;" overscrollable auto-scroll item-width="135px">
+                <ons-carousel-item ng-repeat="item in [1,2,3,4,5,6,7,8,9,10]">
+                    <div class="item" ng-click="myNavigator_1_1.pushPage('scale_test.html', {animation: 'slide', param1: 'value1'})">
+                        <p class="info2 ml10p pt10p pb5p"><span class="fav"><em id="count49086" class="f16x" style="color: #44c2a6;">999999</em> Favs</span></p>
+                        <p class="thumb bt1pd bb1p"><img src="https://idolscheduler.sakura.ne.jp/img/gf_sample_thumb_comic.jpg" width="123" height="auto"></p>
+                        <p class="info1 pb10p">
+                            <span class="name"><em>ONE PUNCH MAN</em></span>
+                            <span class="title">村田雄介 / ONE</span>
+                            <span class="clearfix p5p">時代が求めたニューヒーロー『一撃男』と言えば?!? 『WEB界の...</span>
+                        </p>
+                    </div>
+                </ons-carousel-item>
+            </ons-carousel>
+
+            <h2 class="main_title ml10p mb5p">おすすめイラスト作品</h2>
+            <ons-carousel id="top_reccomend" swipeable style="margin: 0 0 10px; height: 342px;" overscrollable auto-scroll item-width="135px">
+                <ons-carousel-item ng-repeat="item in [1,2,3,4,5,6,7,8,9,10]">
+                    <div class="item" onclick="pusha('valuea')">
+                        <p class="info2 ml10p pt10p pb5p"><span class="fav"><em id="count49086" class="f16x" style="color: #44c2a6;">999999</em> Favs</span></p>
+                        <p class="thumb bt1pd bb1p"><img src="https://idolscheduler.sakura.ne.jp/img/gf_sample_thumb_illust.jpg" width="123" height="auto"></p>
+                        <p class="info1 pb10p">
+                            <span class="name"><em>みつみ美里イラスト集 Ⅳ</em></span>
+                            <span class="title">みつみ美里</span>
+                            <span class="clearfix p5p">新刊は・esquisse 花鳥風月 ／甘露樹、みつみ美里 A4フルカラ...</span>
+                        </p>
+                    </div>
+                </ons-carousel-item>
+            </ons-carousel>
+
+<!--            <button class="button button--cta clearfix" style="width: 90%; margin: -10px auto 20px;">もっと見る</button> -->
+
+            <div style="text-align: center" class="mt10p">
+                <div id="header_ad">
+        			<img src="https://idolscheduler.sakura.ne.jp/img/gf_sample_banner_top_2.jpg" width="100%" height="auto" onClick="window.open('http://www.girlpop.jp/report/detail/?p=19447', '_self');">
+        		</div>
+            </div>
+
+            <h2 class="main_title ml10p mb5p">ランキング - マンガ作品</h2>
+            <ons-list class="list_thumbnails">
+                <ons-list-item modifier="chevron" class="list-item-container" ng-repeat="i in [1,2,3]">
+                  <ons-row>
+                    <ons-col width="95px">
+                      <img src="https://idolscheduler.sakura.ne.jp/img/gf_sample_thumb_rank.jpg" class="thumbnail">
+                    </ons-col>
+                    <ons-col>
+                      <div class="name">
+                        第{{i}}位　Eiffel Tower
+                      </div>
+                      <div class="location">
+                        <i class="fa fa-map-marker"></i>Paris, France
+                      </div>
+                      <div class="desc">
+                        Eiffel Tower is the symbol of Paris and named by Gustave Eiffel.
+                      </div>
+                      <div class="fav mt5p">
+                        <em class="f16x">999999</em> favs
+                      </div>
+                    </ons-col>
+                    <ons-col width="40px"></ons-col>
+                  </ons-row>
+                </ons-list-item>
+            </ons-list>
+            
+            <h2 class="main_title ml10p mb5p">ランキング - イラスト作品</h2>
+            <ons-list class="list_thumbnails">
+                <ons-list-item modifier="chevron" class="list-item-container" ng-repeat="i in [1,2,3]">
+                  <ons-row ng-click="myNavigator_1_1.pushPage('itemdetail.html', {animation: 'slide'})">
+                    <ons-col width="95px">
+                      <img src="https://idolscheduler.sakura.ne.jp/img/gf_sample_thumb_rank_2.jpg" class="thumbnail">
+                    </ons-col>
+                    <ons-col>
+                      <div class="name">
+                        第{{i}}位　Eiffel Tower
+                      </div>
+                      <div class="location">
+                        <i class="fa fa-map-marker"></i>Paris, France
+                      </div>
+                      <div class="desc">
+                        Eiffel Tower is the symbol of Paris and named by Gustave Eiffel.
+                      </div>
+                      <div class="fav mt5p">
+                        <em class="f16x">999999</em> favs
+                      </div>
+                    </ons-col>
+                    <ons-col width="40px"></ons-col>
+                  </ons-row>
+                </ons-list-item>
+            </ons-list>
+<!--
+            <h2 class="main_title ml10p mb5p">最新のタイムライン</h2>
+            <ons-list class="timeline" modifier="inset" style="height: auto !important;">
+    			<div id="checkin_body" style="text-align: center; overflow: auto;">
+                    <ons-icon icon="spinner" size="40px" spin="true"></ons-icon>
+                </div>
+                <ons-list-item ng-show="isLoading">
+                    <div class="loader-container" style="text-align: center;">
+                        <ons-icon icon="spinner" size="40px" spin="true"></ons-icon>
+                    </div>
+                </ons-list-item>
+            </ons-list>
+-->
+            <ul style="list-style: none; display: table; margin: 0 auto; padding: 0;">
+                <li class="mr20p floatL"><p class="fa fa-twitter-square  fa-lg txtC f30x" style="color: #1b95e0;"><br><span class="f14x fGray02">公式Twitter</span></p></li>
+                <li class="floatL"><p class="fa fa-facebook-square fa-lg txtC f30x" style="color: #3b55a0;"><br><span class="f14x fGray02">公式facebook</span></p></li>
+            </ul>
+
+        </ons-scroller>
+
+    </ons-page>
+</ons-navigator>

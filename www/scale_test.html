@@ -1,0 +1,31 @@
+<ng-include src="scale_test.html"></ng-include>
+
+    <ons-page id="scale_test" ng-controller="PageController_scale_test">
+<!--
+        <ons-toolbar id="toolbar" modifier="transparent" style="opacity: 0.0">
+            <div class="left">
+                <ons-toolbar-button ng-click="onPopPage()"><ons-icon icon="ion-chevron-left" style="color: rgba(38, 100, 171, 0.81);"></ons-icon></ons-toolbar-button>
+            </div>
+            <div class="center">Scale Test</div>
+        </ons-toolbar>
+-->
+        <ons-gesture-detector ng-swipeleft="onSwipeLeft()" ng-swiperight="onSwipeRight()" ng-pinchin="onPinchIn()" ng-pinchout="onPinchOut()" ng-Tap="onTap()" ng-doubletap="onDoubleTap()">
+            <div id="detect-area">
+                <ons-icon icon="spinner" ng-show="spinner === true" size="40px" spin="true" style="width: 100%; height: auto; text-align: center; margin-top: 75%;"></ons-icon>
+                <img id="img" ng-show="spinner !== true" src="" width="auto">
+            </div>
+        </ons-gesture-detector>
+
+        <div id="toolbar" modifier="transparent" style="opacity: 0; position: fixed; z-index: 10000; left: 0px; right: 0px; top: 0px; display: block; background-color: #fff" class="navigation-bar navigation-bar--transparent mt10p">
+            <div class="left navigation-bar__left navigation-bar--transparent__left">
+                <ons-toolbar-button ng-click="onPopPage()" class="ng-isolate-scope">
+                    <span class="pl3p toolbar-button  navigation-bar__line-height">
+                        <ons-icon icon="ion-chevron-left" style="color: rgba(38, 100, 171, 0.81);" class="ng-scope ons-icon ons-icon--ion ion-chevron-left fa-lg"><span class="f12x ml10p" style="margin-top: -5px; display: inline-table;">作品TOP</span></ons-icon>
+                    </span>
+                </ons-toolbar-button>
+            </div>
+            <div class="center navigation-bar__title navigation-bar__center navigation-bar--transparent__center">第一話</div>
+            <div class="right navigation-bar__right navigation-bar--transparent__right">&nbsp;</div>
+        </div>
+
+    </ons-page>

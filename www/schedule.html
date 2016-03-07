@@ -1,0 +1,121 @@
+      <ons-page id="schedule">
+
+        <ons-toolbar class="bg_color">
+            <div class="left">
+                <ons-toolbar-button ng-click="app.slidingMenu.toggleMenu()"><ons-icon class="font_white" icon="bars"></ons-icon></ons-toolbar-button>
+            </div>
+            <div class="center">
+                <img class="logo_gps" src="https://idolscheduler.sakura.ne.jp/img/logo.png" width="143" height="auto">
+            </div>
+            <div class="right">
+                <ons-toolbar-button ng-click="myNavigator_1_1.pushPage('search.html', {animation: 'lift'})"><ons-icon class="font_white" icon="search"></ons-icon></ons-toolbar-button>
+            </div>
+        </ons-toolbar>
+
+        <div class="navigation-bar">
+          <div class="navigation-bar__center">
+
+            <!-- segment control -->
+            <div class="button-bar" style="width:200px; margin:8px auto 0;">
+              <div class="button-bar__item">
+                <input type="radio" name="navi-segment-a" checked>
+                <div class="button-bar__button">Today</div>
+              </div>
+              <div class="button-bar__item">
+                <input type="radio" name="navi-segment-a">
+                <div class="button-bar__button">Tomorrow</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <ons-list class="plan-list">
+          <ons-list-item modifier="chevron" class="plan" ng-repeat="a in [1]">
+            <ons-row>
+              <ons-col width="80px" class="plan-left" style="max-height: 207px; overflow-y: scroll; word-break: break-all;">
+                <div class="plan-date">17:30</div>
+                <div>
+                    <p><img width="60" src="http://idolscheduler.jp/img/prof_tokyocher2party_150814.jpg"></p>
+                    <p><img width="60" src="http://idolscheduler.jp/img/prof_idolcallege_150814.jpg"></p>
+                    <p><img width="60" src="http://idolscheduler.jp/img/prof_kotonemai_151006.jpg"></p>
+                    <p><img width="60" src="http://idolscheduler.jp/img/prof_partyrockets_150814.jpg"></p>
+                    <p><img width="60" src="http://idolscheduler.jp/img/prof_palet_150814.jpg"></p>
+                </div>
+              </ons-col>
+
+              <ons-col width="6px" class="plan-center" ng-style="{backgroundColor:a % 2 == 1 ? '#3399ff' : '#ccc'}">
+              </ons-col>
+
+              <ons-col class="plan-right">
+                <div class="plan-name">IDOLidge Carnival-アイドリッジカーニバル-</div>
+
+                <div class="plan-info">
+                  <div ng-hide="a % 4 == 0">
+                    Tokyo Cheer2 Party/アイドルカレッジ/小桃音まい/Party Rockets/Palet/放課後プリンセス/drop/シブヤDOMINION/吉田凜音/赤マルダッシュ☆/mlmi/Stella☆Beats/アキシブproject/つばさFly/POP/ミライスカート/ハコイリムスメ/callme/ベースボールガールズ
+                  </div>
+
+                  <div ng-hide="a % 3 == 0">
+                    <ons-icon icon="fa-map-marker"></ons-icon>渋谷 O-EAST　東京・渋谷
+                  </div>
+                </div>
+              </ons-col>
+            </ons-row>
+          </ons-list-item>
+          <ons-list-item modifier="chevron" class="plan" ng-repeat="a in [2]">
+            <ons-row>
+              <ons-col width="80px" class="plan-left" style="overflow-y: scroll; word-break: break-all;">
+                <div class="plan-date">17:30</div>
+                <div>
+                    <p><img width="60" src="http://idolscheduler.jp/img/noimage_l.png"></p>
+                </div>
+              </ons-col>
+
+              <ons-col width="6px" class="plan-center" ng-style="{backgroundColor:a % 2 == 1 ? '#3399ff' : '#ccc'}">
+              </ons-col>
+
+              <ons-col class="plan-right">
+                <div class="plan-name">フレッシュフォトセッション</div>
+
+                <div class="plan-info">
+                  <div ng-hide="a % 4 == 0">
+                    ベースボールガールズ
+                  </div>
+
+                  <div ng-hide="a % 3 == 0">
+                    <ons-icon icon="fa-map-marker"></ons-icon>東京・秋葉原
+                  </div>
+                </div>
+              </ons-col>
+            </ons-row>
+          </ons-list-item>
+          <ons-list-item modifier="chevron" class="plan" ng-repeat="a in [3]">
+            <ons-row>
+              <ons-col width="80px" class="plan-left" style="overflow-y: scroll; word-break: break-all;">
+                <div class="plan-date">17:30</div>
+                <div>
+                    <p><img width="60" src="http://ecx.images-amazon.com/images/I/613O4aFg6XL.jpg"></p>
+                </div>
+              </ons-col>
+
+              <ons-col width="6px" class="plan-center" ng-style="{backgroundColor:a % 2 == 1 ? '#3399ff' : '#ccc'}">
+              </ons-col>
+
+              <ons-col class="plan-right">
+                <div class="plan-name">全国ツアー 静岡・イオンモール浜松志都呂</div>
+
+                <div class="plan-info">
+                  <div>
+                    Kiss Bee
+                  </div>
+
+                  <div>
+                    <ons-icon icon="fa-map-marker"></ons-icon>東京・秋葉原
+                  </div>
+                </div>
+              </ons-col>
+            </ons-row>
+          </ons-list-item>
+        </ons-list>
+
+      </ons-page>

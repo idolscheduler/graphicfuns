@@ -1,0 +1,68 @@
+<ons-navigator var="myNavigator" ng-app="app" id="my-navigator" ng-controller="PageController" ons-prepop="pushb.init_prepop()" ons-postpop="pushb.init_postpop()">
+   <ons-page id="page_1">
+        <ons-toolbar class="bg_color">
+            <div class="left">
+                <ons-toolbar-button ng-click="app.slidingMenu.toggleMenu()"><ons-icon class="font_white" icon="bars"></ons-icon></ons-toolbar-button>
+            </div>
+            <div class="center">
+                <img class="logo_gps" src="https://idolscheduler.sakura.ne.jp/img/logo_grafun.png" width="143" height="auto">
+            </div>
+            <div class="right">
+                <ons-toolbar-button ng-click="myNavigator.pushPage('search.html', {animation: 'lift'})"><ons-icon class="font_white" icon="search"></ons-icon></ons-toolbar-button>
+            </div>
+        </ons-toolbar>
+
+        <div style="text-align: center">
+        
+            <div id="header_ad" class="mb10p">
+    			<img src="https://idolscheduler.sakura.ne.jp/idolscheduler/wp-content/uploads/2015/06/03_AKB48bn2015.6.111.jpg" width="320" height="40" onClick="window.open('http://www.girlpop.jp/ioj2015/', '_blank', 'location=yes');">
+				<img src="https://idolscheduler.sakura.ne.jp/img/ad/gps_passpo_bannerC.png" width="320" height="40" onClick="window.open('http://www.girlpop.jp/report/detail/?p=19447', '_self');">
+    		</div>
+
+            <div id="header_dayslider">
+    			<nav id="daynav">
+    				<ul id="daynav_ul" style="position: relative; top: 50%;"><img src="https://idolscheduler.sakura.ne.jp/img/bx_loader.gif" alt="" /></ul>
+    			</nav>
+    		</div>
+
+        </div>
+
+        <h2 class="main_title ml10p mb5p">最新のタイムライン</h2>
+        <ons-list class="timeline" modifier="inset" style="height: auto !important;">
+          <ons-list-item class="timeline-li" modifier="tappable" ons-lazy-repeat="MyDelegate" ng-show="item.title">
+            <ons-row>
+              <ons-col width="80px" class="mr5p">
+                <img class="lazy{{item.sid}}" data-original="{{item.thumb}}" width="80" height="auto">
+                <div class="timeline-usercount">{{item.usercount}} users</div>
+              </ons-col>
+
+              <ons-col>
+                <div class="timline-from">
+                  <span class="timeline-name">{{item.title}}</span>
+                  <br>
+                  <span class="timeline-id">{{item.area}} {{item.place}}</span>
+                  <br>
+                  <span class="timeline-id">{{item.date}}</span>
+                </div>
+                <div ng-show="item.title==''">
+                  <p>
+                        <span style='opacity: 0.7;'>
+                            <ons-icon icon='fa-spinner' spin='true'></ons-icon>
+                            Loading bacon...
+                        </span>
+                  </p>
+                </div>
+
+                <div class="timeline-message">
+                    <span style="margin-bottom: 3px; display: inline-block; font-size: 12px;">チェックインユーザー</span>
+                    <br>
+<!--                    <img ng-repeat="image in item.userthumb" src="{{image.img}}" class="timeline-image mr3p"> -->
+                    <img src="{{item.userthumb}}" class="timeline-image mr3p">
+                </div>
+              </ons-col>
+            </ons-row>
+          </ons-list-item>
+        </ons-list>
+
+    </ons-page>
+</ons-navigator>

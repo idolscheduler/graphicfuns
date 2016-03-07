@@ -1,0 +1,21 @@
+<div ng-controller="Search_Controller">
+    <ons-page id="search-page">
+
+        <div class="navigation-bar">
+            <div class="navigation-bar__center">
+                <form ng-submit="main.doSearch()">
+                    <input type="search" id="search_input" class="search-input" style="width: 96%; margin: 6px auto 6px auto;" placeholder="人物、グループ名などで検索" ng-model="main.toSearch">
+                </form>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 20px;">
+            <span id="label_date">カレンダーで検索:</span> <input id="date" name="date">
+        </div>
+
+        <div style="text-align: center; margin-top: 20px;">
+            <ons-button style="padding: 0 120px;" ng-click="myNavigator_1_1.popPage()">戻る</ons-button>
+        </div>
+
+    </ons-page>
+</div>
